@@ -211,10 +211,6 @@
             <p>Introductions & Greetings</p>
         </div>
 
-        <div class="demo-notice">
-            PROTOTYPE VERSION - Upload your .mov files to replace placeholder videos
-        </div>
-
         <div class="flashcard" id="flashcard">
             <div class="card-face card-front">
                 <div class="video-container">
@@ -249,35 +245,33 @@
         </div>
     </div>
 
-    <script>
-        // Flashcard data - you'll replace these with your actual videos
-        const flashcards = [
-            {
-                video: "videos/hello.mov", // Replace with your actual file
-                english: "HELLO",
-                asl: "Wave hand greeting"
-            },
-            {
-                video: "videos/nice-meet-you.mov", // Replace with your actual file
-                english: "NICE TO MEET YOU",
-                asl: "Polite introduction response"
-            },
-            {
-                video: "videos/my-name.mov", // Replace with your actual file
-                english: "MY NAME IS...",
-                asl: "Introducing yourself"
-            },
-            {
-                video: "videos/what-your-name.mov", // Replace with your actual file
-                english: "WHAT IS YOUR NAME?",
-                asl: "Asking someone's name"
-            },
-            {
-                video: "videos/how-are-you.mov", // Replace with your actual file
-                english: "HOW ARE YOU?",
-                asl: "Common greeting question"
-            }
-        ];
+    const flashcards = [
+    {
+        video: "videos/Hello.mov",
+        english: "HELLO",
+        asl: "Wave hand greeting"
+    },
+    {
+        video: "videos/Nice meet you.mov",
+        english: "NICE TO MEET YOU",
+        asl: "Polite introduction response"
+    },
+    {
+        video: "videos/My name.mov",
+        english: "MY NAME IS...",
+        asl: "Introducing yourself"
+    },
+    {
+        video: "videos/What is your name.mov",
+        english: "WHAT IS YOUR NAME?",
+        asl: "Asking someone's name"
+    },
+    {
+        video: "videos/How are you.mov",
+        english: "HOW ARE YOU?",
+        asl: "Common greeting question"
+    }
+];
 
         let currentCardIndex = 0;
         let isFlipped = false;
