@@ -108,27 +108,6 @@
             text-align: center;
         }
 
-        .video-controls {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .control-btn {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .control-btn:hover {
-            background: #5a6fd8;
-        }
-
         .navigation {
             display: flex;
             justify-content: space-between;
@@ -230,12 +209,6 @@
                     <div id="video-error" class="error-message" style="display: none;">
                         Video failed to load. Check file path and format.
                     </div>
-                </div>
-                <div class="video-controls">
-                    <button class="control-btn" onclick="playVideo()">▶ Play</button>
-                    <button class="control-btn" onclick="pauseVideo()">⏸ Pause</button>
-                    <button class="control-btn" onclick="replayVideo()">↻ Replay</button>
-                    <button class="control-btn" onclick="slowMotion()">🐌 Slow</button>
                 </div>
             </div>
             
@@ -373,33 +346,7 @@
             }
         }
 
-        // Video control functions
-        function playVideo() {
-            video.play().catch(e => {
-                console.error('Play failed:', e);
-                showVideoError();
-            });
-        }
-
-        function pauseVideo() {
-            video.pause();
-        }
-
-        function replayVideo() {
-            video.currentTime = 0;
-            video.play().catch(e => {
-                console.error('Replay failed:', e);
-                showVideoError();
-            });
-        }
-
-        function slowMotion() {
-            if (video.playbackRate === 1) {
-                video.playbackRate = 0.5;
-            } else {
-                video.playbackRate = 1;
-            }
-        }
+        // Video control functions removed - using native video controls
 
         function showVideoError() {
             videoError.style.display = 'block';
