@@ -260,7 +260,7 @@
     <script>
         const flashcards = [
             {
-                video: "videos/hello.mov",
+                video: "videos/Hello.mov",
                 english: "HELLO",
                 asl: "Wave hand greeting"
             },
@@ -280,7 +280,7 @@
                 asl: "Asking someone's name"
             },
             {
-                video: "videos/how are you.mov",
+                video: "videos/How are you.mov",
                 english: "HOW ARE YOU?",
                 asl: "Common greeting question"
             }
@@ -345,10 +345,11 @@
             // Show a fallback message if video doesn't load within 3 seconds
             setTimeout(() => {
                 if (video.readyState === 0) {
-                    videoError.textContent = `Video not found: ${card.video}`;
+                    videoError.textContent = `Video not found: ${card.video} - Check filename exactly!`;
                     videoError.style.display = 'block';
+                    console.log('Video failed to load:', card.video);
                 }
-            }, 3000);
+            }, 1000);
         }
 
         // Card flipping
