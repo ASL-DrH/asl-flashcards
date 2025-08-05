@@ -260,7 +260,7 @@
     <script>
         const flashcards = [
             {
-                video: "videos/Hello.mov",
+                video: "videos/hello.mov",
                 english: "HELLO",
                 asl: "Wave hand greeting"
             },
@@ -270,7 +270,7 @@
                 asl: "Polite introduction response"
             },
             {
-                video: "videos/My name.mov",
+                video: "videos/My Name.mov",
                 english: "MY NAME IS...",
                 asl: "Introducing yourself"
             },
@@ -280,7 +280,7 @@
                 asl: "Asking someone's name"
             },
             {
-                video: "videos/How are you.mov",
+                video: "videos/how are you.mov",
                 english: "HOW ARE YOU?",
                 asl: "Common greeting question"
             }
@@ -339,8 +339,16 @@
             flashcard.classList.remove('flipped');
             isFlipped = false;
             
-            // Hide error message
+            // Hide error message initially
             videoError.style.display = 'none';
+            
+            // Show a fallback message if video doesn't load within 3 seconds
+            setTimeout(() => {
+                if (video.readyState === 0) {
+                    videoError.textContent = `Video not found: ${card.video}`;
+                    videoError.style.display = 'block';
+                }
+            }, 3000);
         }
 
         // Card flipping
